@@ -9,6 +9,12 @@ body {
     height: 100vh;
 }
 
+#countdown {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
 .container {
     text-align: center;
     background-color: #f7f3e3;
