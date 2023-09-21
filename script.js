@@ -1,5 +1,5 @@
 // Defina a data de término do contador regressivo
-var countDownDate = new Date("December 31, 2023 23:59:59").getTime();
+var countDownDate = new Date("October 31, 2023 23:59:59").getTime();
 
 // Atualize o contador a cada segundo
 var countdownInterval = setInterval(function() {
