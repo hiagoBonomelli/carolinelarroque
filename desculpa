@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Protegida</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .btn-yes {
+            padding: 10px 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+        .btn-no {
+            padding: 30px 60px;
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            position: absolute; /* Adiciona a posição absoluta */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vamos fazer voltar ao que era antes? Vai deixar o orgulho de lado e tentar fazer acontecer comigo?</h1>
+        <button class="btn-yes">Sim</button>
+        <button class="btn-no" id="btn-no">Não</button>
+    </div>
+
+    <script>
+        const btnNo = document.getElementById('btn-no');
+
+        btnNo.addEventListener('mouseenter', () => {
+            // Gere posições aleatórias dentro da janela do navegador,
+            // garantindo que o botão "Não" não se sobreponha a si mesmo
+            const maxX = window.innerWidth - btnNo.clientWidth;
+            const maxY = window.innerHeight - btnNo.clientHeight;
+            let randomX, randomY;
+
+            do {
+                randomX = Math.random() * maxX;
+                randomY = Math.random() * maxY;
+            } while (
+                randomX + btnNo.clientWidth > btnNo.offsetLeft &&
+                randomX < btnNo.offsetLeft + btnNo.clientWidth &&
+                randomY + btnNo.clientHeight > btnNo.offsetTop &&
+                randomY < btnNo.offsetTop + btnNo.clientHeight
+            );
+
+            // Define a posição do botão "Não" para as posições aleatórias
+            btnNo.style.left = randomX + 'px';
+            btnNo.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
